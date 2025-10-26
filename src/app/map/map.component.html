@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="map-column">
+    <h2>World Map</h2>
+    <div class="map-container" [innerHTML]="mapSvg"></div>
+  </div>
+  
+  <div class="info-column">
+    <h2>Country Information</h2>
+    <div *ngIf="!countryInfo" class="placeholder">
+      <p>Click on a country to see its information</p>
+    </div>
+    
+    <div *ngIf="countryInfo" class="country-details">
+      <h3>{{ countryInfo.name }}</h3>
+      <div class="info-item">
+        <strong>Capital:</strong> {{ countryInfo.capitalCity }}
+      </div>
+      <div class="info-item">
+        <strong>Region:</strong> {{ countryInfo.region.value }}
+      </div>
+      <div class="info-item">
+        <strong>Income Level:</strong> {{ countryInfo.incomeLevel.value }}
+      </div>
+      <div class="info-item">
+        <strong>Longitude:</strong> {{ countryInfo.longitude }}
+      </div>
+      <div class="info-item">
+        <strong>Latitude:</strong> {{ countryInfo.latitude }}
+      </div>
+    </div>
+  </div>
+</div>
